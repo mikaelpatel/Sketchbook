@@ -1,0 +1,194 @@
+Arduino-MIB DEFINITIONS ::= BEGIN
+
+IMPORTS
+    MODULE-IDENTITY, enterprises
+    FROM RFC1155-SMI
+    OBJECT-TYPE
+    FROM RFC-1212;
+
+arduinoMIB MODULE-IDENTITY
+    LAST-UPDATED "201210070000Z"
+    ORGANIZATION "Arduino Community"
+    CONTACT-INFO "http://www.arduino.cc"
+    DESCRIPTION
+            "The MIB module for Arduino Hardware (pins).
+             Copyright (C) 2012, The Arduino Community.
+            "
+    ::= { enterprises 36582 }
+
+system OBJECT IDENTIFIER ::= { arduinoMIB 1 }
+
+sysAnalogReference OBJECT-TYPE
+    SYNTAX INTEGER(Default(0), Internal(1), Internal1V1(2), Internal2V56(3), External(4))
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Analog reference setting"
+    ::= { system 1 }
+
+sysStatus OBJECT-TYPE
+    SYNTAX INTEGER(Halt(0), Running(1), Idle(2))
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "System status"
+    ::= { system 2 }
+
+sysFreeMem OBJECT-TYPE
+    SYNTAX INTEGER(0..32767)
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Free system memory"
+    ::= { system 3 }
+
+configuration OBJECT IDENTIFIER ::= { arduinoMIB 2 }
+
+cfgD0 OBJECT-TYPE
+    SYNTAX INTEGER (Output(0), Input(1), PullupInput(2))
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Digital Pin 0 configuration mode (Output, Input, Pullup Input)"
+    ::= { configuration 1 }
+
+value OBJECT IDENTIFIER ::= { arduinoMIB 3 }
+
+valA0 OBJECT-TYPE
+    SYNTAX INTEGER (0..1023)
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Analog Pin 0 value (0..1023)"
+    ::= { value 1 }
+
+valA1 OBJECT-TYPE
+    SYNTAX INTEGER (0..1023)
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Analog Pin 1 value (0..1023)"
+    ::= { value 2 }
+
+valA2 OBJECT-TYPE
+    SYNTAX INTEGER (0..1023)
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Analog Pin 2 value (0..1023)"
+    ::= { value 3 }
+
+valA3 OBJECT-TYPE
+    SYNTAX INTEGER (0..1023)
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Analog Pin 3 value (0..1023)"
+    ::= { value 4 }
+
+valA4 OBJECT-TYPE
+    SYNTAX INTEGER (0..1023)
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Analog Pin 4 value (0..1023)"
+    ::= { value 5 }
+
+valA5 OBJECT-TYPE
+    SYNTAX INTEGER (0..1023)
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Analog Pin 5 value (0..1023)"
+    ::= { value 6 }
+
+valD0 OBJECT-TYPE
+    SYNTAX INTEGER (Low(0), High(1))
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Digital Pin 0 value (Low(0), High(1))"
+    ::= { value 7 }
+
+valD1 OBJECT-TYPE
+    SYNTAX INTEGER (Low(0), High(1))
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Digital Pin 1 value (Low(0), High(1))"
+    ::= { value 8 }
+
+valD2 OBJECT-TYPE
+    SYNTAX INTEGER (Low(0), High(1))
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Digital Pin 2 value (Low(0), High(1))"
+    ::= { value 9 }
+
+valD3 OBJECT-TYPE
+    SYNTAX INTEGER (Low(0), High(1))
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Digital Pin 3 value (Low(0), High(1))"
+    ::= { value 10 }
+
+valD4 OBJECT-TYPE
+    SYNTAX INTEGER (Low(0), High(1))
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Digital Pin 4 value (Low(0), High(1))"
+    ::= { value 11 }
+
+valD5 OBJECT-TYPE
+    SYNTAX INTEGER (Low(0), High(1))
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Digital Pin 5 value (Low(0), High(1))"
+    ::= { value 12 }
+
+valD6 OBJECT-TYPE
+    SYNTAX INTEGER (Low(0), High(1))
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Digital Pin 6 value (Low(0), High(1))"
+    ::= { value 13 }
+
+valD7 OBJECT-TYPE
+    SYNTAX INTEGER (Low(0), High(1))
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Digital Pin 7 value (Low(0), High(1))"
+    ::= { value 14 }
+
+valD8 OBJECT-TYPE
+    SYNTAX INTEGER (Low(0), High(1))
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Digital Pin 8 value (Low(0), High(1))"
+    ::= { value 15 }
+
+valD9 OBJECT-TYPE
+    SYNTAX INTEGER (Low(0), High(1))
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Digital Pin 9 value (Low(0), High(1))"
+    ::= { value 16 }
+
+valD10 OBJECT-TYPE
+    SYNTAX INTEGER (Low(0), High(1))
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Digital Pin 10 value (Low(0), High(1))"
+    ::= { value 17 }
+
+valD11 OBJECT-TYPE
+    SYNTAX INTEGER (Low(0), High(1))
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Digital Pin 11 value (Low(0), High(1))"
+    ::= { value 18 }
+
+valD12 OBJECT-TYPE
+    SYNTAX INTEGER (Low(0), High(1))
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Digital Pin 12 value (Low(0), High(1))"
+    ::= { value 19 }
+
+valD13 OBJECT-TYPE
+    SYNTAX INTEGER (Low(0), High(1))
+    ACCESS read-only
+    STATUS current
+    DESCRIPTION "Digital Pin 13 value (Low(0), High(1))"
+    ::= { value 20 }
+
+END
+
