@@ -27,7 +27,8 @@
 #ifndef __MEMORY_H__
 #define __MEMORY_H__
 
-inline int free_memory() 
+inline int 
+free_memory() 
 {
   extern int __heap_start, *__brkval; 
   int v; 

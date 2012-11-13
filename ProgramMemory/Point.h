@@ -35,7 +35,7 @@
 typedef struct Point Point;
 typedef const PROGMEM Point* Point_P;
 
-// Data structure with static functions to allow namespace
+// Data structure with static functions to make the namespace Point::
 struct Point {
 
   // Member variables
@@ -53,11 +53,6 @@ struct Point {
     return (p.m_y); 
   }
   
-  static inline Point_P get_at(const Point_P p[], uint8_t ix)
-  {
-    return ((Point_P) pgm_read_word(&p[ix]));
-  }
-
   // Access functions for program memory
   static inline uint8_t get_y(Point_P p) 
   { 
@@ -67,6 +62,12 @@ struct Point {
   static inline uint8_t get_x(Point_P p) 
   { 
     return (pgm_read_byte(&p->m_x)); 
+  }
+
+  // Vector access function
+  static inline Point_P get_at(const Point_P p[], uint8_t ix)
+  {
+    return ((Point_P) pgm_read_word(&p[ix]));
   }
 
   // Copy from program memory
@@ -83,22 +84,24 @@ struct Point {
   }
 
   // Debug support functions: Print contents of data structure 
-#ifndef NDEBUG
   static void print(const Point& p)
   {
+#ifndef NDEBUG
     Serial_print("Point(x = ");
-    Serial.print(Point::get_x(p), HEX);
+    Serial.print(Point::get_x(p));
     Serial_print(", y = ");
-    Serial.print(Point::get_y(p), HEX);
+    Serial.print(Point::get_y(p));
     Serial_print(")\n");
+#endif
   }
 
   static void print(Point_P p)
   {
+#ifndef NDEBUG
     Point tmp = copy(p);
     print(tmp);
-  }
 #endif
+  }
 
 };
 
