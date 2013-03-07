@@ -39,7 +39,7 @@ const PROGMEM Point fie = {
 
 const PROGMEM Point fum = { 
   6,
-  7 
+  7
 };
 
 // Vector of pointers to data structure in program memory
