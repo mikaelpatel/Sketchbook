@@ -94,7 +94,7 @@ public:
   
 public:
   /**
-   * Initialise the Virtual Wire Interface (VWI), to operate at speed
+   * Initialise the Virtual Wire library, to operate at speed
    * bits per second with given sleep mode. Return true(1) if
    * successful otherwise false(0). Must be called before transmitting
    * or receiving.
@@ -105,14 +105,12 @@ public:
   static bool begin(uint16_t speed, uint8_t mode = SLEEP_MODE_IDLE);
 
   /**
-   * Enable the Virtual Wire Interface (VWI) interrupt handling after
-   * deep sleep modes.
+   * Enable the interrupt handling after deep sleep modes.
    */
   static void enable();
 
   /**
-   * Disable the Virtual Wire Interface (VWI) interrupt handling for
-   * deep sleep modes.
+   * Disable the interrupt handling for deep sleep modes.
    */
   static void disable();
 
@@ -213,7 +211,7 @@ public:
 
   public:
     /**
-     * Construct VWI Receiver instance connected to the given pin.
+     * Construct VirtualWire Receiver instance connected to the given pin.
      * @param[in] rx input pin.
      */
     Receiver(uint8_t rx);
@@ -320,7 +318,7 @@ public:
 
   public:
     /**
-     * Construct VWI Transmitter instance connected to the given pin.
+     * Construct VirtualWire Transmitter instance connected to the given pin.
      * @param[in] tx output pin.
      */
     Transmitter(uint8_t tx);
